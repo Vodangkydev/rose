@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Chúc mừng 20/10</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fff0f5, #ffe4e6, #fce4ec);
+            overflow: hidden;
+            font-family: "Mali", cursive;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Floating hearts background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .center-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 240, 245, 0.95));
+            padding: 50px 60px;
+            border-radius: 35px;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #d81b60;
+            text-align: center;
+            box-shadow: 0 25px 80px rgba(216, 27, 96, 0.4),
+                0 0 0 3px rgba(255, 182, 193, 0.6) inset,
+                0 0 30px rgba(255, 105, 180, 0.3);
+            z-index: 1;
+            max-width: 90%;
+            animation: pulse 3s ease-in-out infinite;
+            backdrop-filter: blur(15px);
+            border: 3px solid rgba(255, 182, 193, 0.8);
+            position: relative;
+        }
+
+        .center-message::before {
+            content: '🌸';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .center-message::after {
+            content: '💕';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 1.8rem;
+            animation: bounce 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+
+        .center-message strong {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #d81b60, #f06292, #d81b60);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s ease infinite;
+        }
+
+        @keyframes gradient {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 99;
+            display: none;
+            animation: fadeInOverlay 0.3s ease;
+        }
+
+        @keyframes fadeInOverlay {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f8 100%);
+            border-radius: 25px;
+            box-shadow: 0 25px 80px rgba(216, 27, 96, 0.4);
+            padding: 30px;
+            text-align: center;
+            z-index: 100;
+            width: 90%;
+            max-width: 400px;
+            display: none;
+            animation: popupShow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes popupShow {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5) rotate(-5deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+        }
+
+        /* .popup::before {
+            content: '🌸';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            animation: bounce 1s ease-in-out infinite;
+        } */
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        .popup-content {
+            margin-top: 20px;
+        }
+
+        .popup img {
+            max-width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 3px solid white;
+        }
+
+        .popup p {
+            font-size: 1.1rem;
+            color: #d81b60;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            background: linear-gradient(135deg, #d81b60 0%, #f06292 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(216, 27, 96, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .popup button:hover {
+            background: linear-gradient(135deg, #ad1457 0%, #e91e63 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(216, 27, 96, 0.5);
+        }
+
+        .popup button:active {
+            transform: translateY(0);
+        }
+
+        .falling-letter {
+            position: absolute;
+            top: -100px;
+            width: 50px;
+            height: auto;
+            animation: fall linear;
+            cursor: pointer;
+            user-select: none;
+            z-index: 2;
+            animation-duration: 8s;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .falling-letter:hover {
+            transform: scale(1.2) rotate(10deg);
+            filter: drop-shadow(0 10px 20px rgba(216, 27, 96, 0.4));
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            20% {
+                transform: translateY(20vh) translateX(-20px) rotate(-10deg);
+            }
+
+            40% {
+                transform: translateY(40vh) translateX(15px) rotate(8deg);
+            }
+
+            60% {
+                transform: translateY(60vh) translateX(-15px) rotate(-6deg);
+            }
+
+            80% {
+                transform: translateY(80vh) translateX(10px) rotate(4deg);
+            }
+
+            100% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes letterClick {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.3) rotate(360deg);
+            }
+
+            100% {
+                transform: scale(0) rotate(720deg);
+            }
+        }
+
+        .letter-clicked {
+            animation: letterClick 0.6s ease-out forwards !important;
+        }
+
+        .heart {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            animation: explode 2s ease-out forwards;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: translate(-50%, -50%) translate(0, 0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .center-gif {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            max-width: 40vw;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* Bouquet animation */
+        .bouquet-container {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .bouquet {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            animation: bouquetSway 4s ease-in-out infinite;
+        }
+
+        .flower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+            animation: flowerBloom 3s ease-in-out infinite;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .flower:nth-child(1) { top: 20px; left: 85px; animation-delay: 0s; }
+        .flower:nth-child(2) { top: 40px; left: 70px; animation-delay: 0.5s; }
+        .flower:nth-child(3) { top: 40px; left: 100px; animation-delay: 1s; }
+        .flower:nth-child(4) { top: 60px; left: 60px; animation-delay: 1.5s; }
+        .flower:nth-child(5) { top: 60px; left: 110px; animation-delay: 2s; }
+        .flower:nth-child(6) { top: 80px; left: 85px; animation-delay: 2.5s; }
+
+        .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 200px;
+            background: linear-gradient(to bottom, #90ee90, #228b22);
+            border-radius: 4px;
+        }
+
+        .leaves {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: #32cd32;
+            border-radius: 50% 0 50% 0;
+            transform: rotate(-30deg);
+        }
+
+        .leaves:nth-child(7) { bottom: 50px; left: 60px; }
+        .leaves:nth-child(8) { bottom: 80px; right: 60px; transform: rotate(30deg); }
+
+        @keyframes bouquetSway {
+            0%, 100% { transform: translateX(-50%) rotate(-2deg); }
+            50% { transform: translateX(-50%) rotate(2deg); }
+        }
+
+        @keyframes flowerBloom {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        /* Special flower popup */
+        .flower-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f8 100%);
+            border-radius: 30px;
+            box-shadow: 0 30px 100px rgba(216, 27, 96, 0.5);
+            padding: 40px;
+            text-align: center;
+            z-index: 200;
+            width: 90%;
+            max-width: 500px;
+            display: none;
+            animation: flowerPopupShow 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            border: 4px solid rgba(255, 182, 193, 0.8);
+        }
+
+        .flower-popup.active {
+            display: block;
+        }
+
+        .flower-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 199;
+            display: none;
+            animation: fadeInOverlay 0.3s ease;
+        }
+
+        .flower-overlay.active {
+            display: block;
+        }
+
+        @keyframes flowerPopupShow {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+        }
+
+        .flower-popup-content {
+            position: relative;
+        }
+
+        .flower-popup-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: flowerGlow 2s ease-in-out infinite;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+            overflow: hidden;
+            border: 4px solid rgba(255, 182, 193, 0.8);
+        }
+
+        .flower-popup-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        @keyframes flowerGlow {
+            0%, 100% { 
+                box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 25px 80px rgba(255, 105, 180, 0.6);
+                transform: scale(1.05);
+            }
+        }
+
+        .flower-popup h2 {
+            color: #d81b60;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .flower-popup p {
+            color: #c2185b;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .flower-popup button {
+            background: linear-gradient(135deg, #d81b60 0%, #f06292 100%);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(216, 27, 96, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .flower-popup button:hover {
+            background: linear-gradient(135deg, #ad1457 0%, #e91e63 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(216, 27, 96, 0.5);
+        }
+
+        /* Touch instruction */
+        .touch-instruction {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: #d81b60;
+            font-size: 1rem;
+            font-weight: 600;
+            z-index: 15;
+            animation: fadeInOut 3s ease-in-out infinite;
+            box-shadow: 0 5px 20px rgba(216, 27, 96, 0.3);
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.7; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Cute character illustrations */
+        .character {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            z-index: 8;
+            animation: characterFloat 4s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .character:hover {
+            transform: scale(1.2);
+        }
+
+        .character-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .character-2 {
+            top: 15%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .character-3 {
+            top: 60%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .character-4 {
+            top: 70%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes characterFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(2deg); }
+            50% { transform: translateY(-5px) rotate(0deg); }
+            75% { transform: translateY(-15px) rotate(-2deg); }
+        }
+
+        /* Sparkle effects */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Interactive gift box */
+        .gift-box {
+            position: fixed;
+            bottom: 200px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 12;
+            animation: giftBounce 2s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+        }
+
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ------------------------------
+        Responsive cho màn hình nhỏ
+        ---------------------------------- */
+        @media (max-width: 768px) {
+            .center-message {
+                width: calc(100% - 20px);
+                max-width: none;
+                padding: 20px 15px;
+                font-size: 1.1rem;
+                border-radius: 20px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .center-message strong {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+
+            .popup {
+                width: 90%;
+                padding: 20px;
+                border-radius: 20px;
+            }
+
+            .popup img {
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
+
+            .popup p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .popup button {
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
+
+            .falling-letter {
+                width: 40px;
+                animation-duration: 9s;
+            }
+
+            .heart {
+                font-size: 18px !important;
+            }
+
+            .falling-letter::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+            }
+        }
+      
+    </style>
+</head>
+
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- Thông điệp chúc mừng-->
+    <div class="center-message">
+        <strong>Chúc mừng 20-10</strong> <!--Sửa tiêu đề chúc mừng ở đây-->
+        <span id="centerText">
+            Ngày Phụ nữ Việt Nam<br> <!-- Sử lời nhắn hiển thị đầu ở đây-->
+            Mong bạn luôn rạng rỡ như những bó hoa!
+        </span>
+    </div>
+
+    <!-- Bouquet animation -->
+    <div class="bouquet-container">
+        <div class="bouquet">
+            <div class="flower"></div>
+            <div class="flower"></div>
+            <div class="flower"></div>
+            <div class="flower"></div>
+            <div class="flower"></div>
+            <div class="flower"></div>
+            <div class="stem"></div>
+            <div class="leaves"></div>
+            <div class="leaves"></div>
+        </div>
+    </div>
+
+    <!-- Touch instruction -->
+    <div class="touch-instruction">
+        Chạm vào ảnh để nhận lời chúc 💕
+    </div>
+    <div class="arrow"></div>
+
+    <!-- Cute characters -->
+    <div class="character character-1" onclick="createHeartExplosion(event.clientX, event.clientY)">👧</div>
+    <div class="character character-2" onclick="createHeartExplosion(event.clientX, event.clientY)">💃</div>
+    <div class="character character-3" onclick="createHeartExplosion(event.clientX, event.clientY)">🌸</div>
+    <div class="character character-4" onclick="createHeartExplosion(event.clientX, event.clientY)">💕</div>
+
+    <!-- Interactive gift box -->
+    <div class="gift-box" onclick="showPopup()">🎁</div>
+
+    <!-- Ảnh động trang trí -->
+    <img src="./assets/mewmew.gif" alt="GIF" class="center-gif" /> <!-- Thay ảnh động bên dưới -->
+
+    <!-- Hiển thị lời chúc -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <img id="popupImage" src="" alt="Lời chúc">
+            <p id="popupMessage">Lời chúc ở đây</p>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Flower popup -->
+    <div class="flower-overlay" id="flowerOverlay"></div>
+    <div class="flower-popup" id="flowerPopup">
+        <div class="flower-popup-content">
+            <div class="flower-popup-image">
+                <img id="princessImage" src="" alt="Công chúa">
+            </div>
+            <h2>Chúc mừng ngày 20/10</h2>
+            <p>Gửi đến các cô gái xinh đẹp những điều ngọt ngào nhất! ✨
+                <br> Chúc bạn một ngày 20/10 thật rực rỡ – như chính cách bạn sống, mạnh mẽ và đáng yêu! 💛</p>
+            <button onclick="closeFlowerPopup()">Cảm ơn 💖</button>
+        </div>
+    </div>
+
+    <!-- Nhạc nền  -->
+    <audio id="player" src="./assets/a.mp3"></audio> <!-- Sửa bài hát ở đây -->
+
+    <script>
+        //Sửa ảnh và lời nhắn ở đây
+        const messages = [
+            {
+                img: "./assets/a1.jpg", //Thay ảnh
+                text: "Chúc bạn luôn vui vẻ, xinh đẹp và ngập tràn yêu thương!" //Thay lời nhắn
+            },
+            {
+                img: "./assets/a2.jpg",
+                text: "Mỗi ngày của bạn đều là một đoá hoa nở rộ."
+            },
+            {
+                img: "./assets/a3.jpg",
+                text: "Cảm ơn bạn vì đã luôn mạnh mẽ và tuyệt vời như thế!"
+            },
+            {
+                img: "./assets/a4.jpg",
+                text: "Chúc bạn một ngày 20/10 thật hạnh phúc và trọn vẹn! "
+            },
+            {
+                img: "./assets/a5.jpg",
+                text: "Bạn là món quà tuyệt vời nhất mà cuộc sống mang lại! "
+            }
+        ];
+
+        // Danh sách ảnh các công chúa Disney từ hoạt hình
+        const princessImages = [
+            "https://media.vov.vn/sites/default/files/styles/large/public/2021-02/tangled-rapunzel.jpg", // Cinderella
+            "https://photo.znews.vn/w660/Uploaded/spuocaw/2018_11_24/photo11542996529461861692207.jpg", // Snow White
+            "https://baoquangbinh.vn/dataimages/201506/original/images581425_tangled_00323710_FFMS.jpg", // Belle
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIRkty-t2MOZiUolHexJEP2qFJNw-uVWntCg&s", // Ariel
+            "https://cdn-i.doisongphapluat.com.vn/695/2020/8/16/nhung-bi-mat-ghe-ron-dang-sau-loat-phim-hoat-hinh-co-tich-cua-disney-01.jpg", // Rapunzel
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmWs3HQ2FeaVHiJtMplcyYxOJsmFCTFshu5A&s", // Tiana
+            "https://vcdn1-giaitri.vnecdn.net/2012/07/06/brave-picture03-1350381526.jpg?w=480&h=0&q=100&dpr=1&fit=crop&s=PuhQQzv6aOVbsoWNAhKSUQ", // Merida
+            "https://baodongnai.com.vn/file/e7837c02876411cd0187645a2551379f/dataimages/201401/original/images918766_Cong_chua__Brave_.jpg", // Elsa
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Vosc2DuBmb0SF4V3Nft6fzo368gpyw8xxw&s", // Anna
+            "https://i.pinimg.com/736x/5d/9b/d2/5d9bd200ff84f21e4ecbce284afecc04.jpg", // Moana
+            "https://mtg.1cdn.vn/2015/08/06/images-motthegioi-vn_1_czdb.jpg", // Mulan
+            "https://i.pinimg.com/736x/c7/73/99/c7739938f546814eb4e1ab5d9ff3587a.jpg"  // Jasmine
+        ];
+
+        let currentMessageIndex = 0;
+        let hasFirstLetterFallen = false;
+
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const popupImage = document.getElementById("popupImage");
+        const popupMessage = document.getElementById("popupMessage");
+        const centerText = document.getElementById("centerText");
+        const floatingHearts = document.getElementById("floatingHearts");
+        const flowerPopup = document.getElementById("flowerPopup");
+        const flowerOverlay = document.getElementById("flowerOverlay");
+        //Thay những ảnh rơi từ trên xuống ở đây
+        const letterImages = [
+            "./assets/letters.png",
+            "./assets/q3.png",
+            "./assets/h1.png",
+            "./assets/h3.png",
+            "./assets/t2.png",
+            "./assets/t5.png",
+        ];
+
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.textContent = ['💕', '💖', '💗', '💝', '🌸', '🌺'][Math.floor(Math.random() * 6)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            
+            floatingHearts.appendChild(heart);
+            
+            setTimeout(() => {
+                if (heart.parentNode) {
+                    heart.remove();
+                }
+            }, 7000);
+        }
+
+        function createSparkle(x, y) {
+            for (let i = 0; i < 8; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                sparkle.style.left = (x + Math.random() * 40 - 20) + 'px';
+                sparkle.style.top = (y + Math.random() * 40 - 20) + 'px';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 3000);
+            }
+        }
+
+        function createHeartExplosion(x, y) {
+            //Thay icon khi ấn thư, hoa, quà
+            const hearts = ['💗', '💕', '💖', '💝', '🌸', '🌺'];
+            const numHearts = 15;
+
+            for (let i = 0; i < numHearts; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+                const angle = (Math.PI * 2 / numHearts) * i;
+                const distance = Math.random() * 100 + 50;
+
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+                heart.style.setProperty('--dx', Math.cos(angle) * distance + 'px');
+                heart.style.setProperty('--dy', Math.sin(angle) * distance + 'px');
+                heart.style.fontSize = (Math.random() * 15 + 20) + 'px';
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 2000);
+            }
+        }
+
+        function createFallingLetter() {
+            const letter = document.createElement("img");
+            const randomImage = letterImages[Math.floor(Math.random() * letterImages.length)];
+            letter.src = randomImage;
+            letter.classList.add("falling-letter");
+            letter.style.left = Math.random() * (window.innerWidth - 50) + "px";
+            letter.addEventListener("click", (e) => {
+                createHeartExplosion(e.clientX, e.clientY);
+                createSparkle(e.clientX, e.clientY);
+                letter.classList.add('letter-clicked');
+                setTimeout(() => {
+                    showPopup();
+                }, 300);
+            });
+
+            document.body.appendChild(letter);
+
+            setTimeout(() => {
+                letter.remove();
+            }, 8000);
+        }
+
+        function showPopup() {
+            const message = messages[currentMessageIndex];
+            popupImage.src = message.img;
+            popupMessage.textContent = message.text;
+            popup.style.display = "block";
+            overlay.classList.add("active");
+
+            popup.dataset.currentMessage = message.text;
+
+            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+        }
+
+        function closePopup() {
+            popup.style.display = "none";
+            overlay.classList.remove("active");
+
+            if (popup.dataset.currentMessage) {
+                centerText.innerHTML = popup.dataset.currentMessage;
+            }
+        }
+
+        function showFlowerPopup() {
+            // Chọn ngẫu nhiên một ảnh công chúa
+            const randomPrincess = princessImages[Math.floor(Math.random() * princessImages.length)];
+            const princessImage = document.getElementById("princessImage");
+            princessImage.src = randomPrincess;
+            
+            flowerPopup.classList.add("active");
+            flowerOverlay.classList.add("active");
+            createHeartExplosion(window.innerWidth / 2, window.innerHeight / 2);
+            createSparkle(window.innerWidth / 2, window.innerHeight / 2);
+        }
+
+        function closeFlowerPopup() {
+            flowerPopup.classList.remove("active");
+            flowerOverlay.classList.remove("active");
+        }
+
+        // Close flower popup when clicking overlay
+        flowerOverlay.addEventListener("click", closeFlowerPopup);
+
+        document.body.addEventListener("click", function () {
+            const player = document.getElementById("player");
+            if (player.paused) {
+                player.play();
+            }
+        });
+
+        overlay.addEventListener("click", closePopup);
+        
+        // Create floating hearts periodically
+        setInterval(() => {
+            createFloatingHeart();
+        }, 2000);
+        
+        // Create falling letters
+        setInterval(() => {
+            createFallingLetter();
+        }, 1000);
+
+        // Add click events to bouquet flowers
+        document.addEventListener('DOMContentLoaded', function() {
+            const flowers = document.querySelectorAll('.flower');
+            flowers.forEach(flower => {
+                flower.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showFlowerPopup();
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
